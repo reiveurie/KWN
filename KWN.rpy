@@ -3,6 +3,7 @@ image i_mc serius = At('mc serius', sprite_highlight('mc'))
 image i_mc takut = At('mc takut', sprite_highlight('mc'))
 image i_mc nangis = At('mc nangis', sprite_highlight('mc'))
 image i_mc kaget = At('mc kaget', sprite_highlight('mc'))
+image i_mc smirk = At('mc smirk', sprite_highlight('mc'))
 image i_jaksa = At('jaksa', sprite_highlight('j'))
 image i_penculik = At('penculik', sprite_highlight('pc'))
 image i_direktur = At('direktur', sprite_highlight('d'))
@@ -14,6 +15,7 @@ image i_zaki kaget = At('zaki kaget', sprite_highlight('z'))
 image i_zaki senyum = At('zaki senyum', sprite_highlight('z'))
 image i_zaki mikir = At('zaki mikir', sprite_highlight('z'))
 image i_pegawai = At('pegawai', sprite_highlight('pg'))
+image i_walkot = At('walkot', sprite_highlight('pgw'))
 image i_detektif = At('detektif', sprite_highlight('dt'))
 image i_staff = At('staff', sprite_highlight('s'))
 image i_arulla datar = At('arulla datar', sprite_highlight('a'))
@@ -22,6 +24,7 @@ image i_arulla nangis = At('arulla nangis', sprite_highlight('a'))
 image i_arulla kaget = At('arulla kaget', sprite_highlight('a'))
 image i_arulla senyum = At('arulla senyum', sprite_highlight('a'))
 image i_arulla smirk = At('arulla smirk', sprite_highlight('a'))
+image i_editor = At('editor', sprite_highlight('e'))
 
 define pov = Character("[povname]")
 define mc = Character("[povname]", image='i_mc', callback=name_callback, cb_name='mc')
@@ -32,9 +35,10 @@ define p = Character("Polisi", image='i_polisi', callback=name_callback, cb_name
 define z = Character("Zaki", image='i_zaki', callback=name_callback, cb_name='z')
 define pg = Character("Pegawai Kejaksaan", image='i_pegawai', callback=name_callback, cb_name='pg')
 define dt = Character("Detektif", image='i_detektif', callback=name_callback, cb_name='dt')
-define pgw = Character("Pegawai Walikota", image='i_pegawaiw', callback=name_callback, cb_name='pgw')
+define pgw = Character("Pegawai Walikota", image='i_walkot', callback=name_callback, cb_name='pgw')
 define s = Character("Staff Negara", image='i_staff', callback=name_callback, cb_name='s')
 define a = Character("Arulla", image='i_arulla', callback=name_callback, cb_name='a')
+define e = Character("Editor", image='i_editor', callback=name_callback, cb_name='e')
 
 
 #define images:
@@ -59,6 +63,9 @@ image mc smirk:
 image mc takut:
     "MC_takut aja.png"
     zoom 0.5
+image mc nangis:
+    "MC_takut tp sambil nangis.png"
+    zoom 0.5
 image zaki emosi:
     "Zaki_Emosi.png"
     zoom 1
@@ -82,7 +89,7 @@ image arulla smirk:
     zoom 1
 image arulla senyum:
     "Arulla senyum.png"
-    zoom 1
+    zoom 0.8
 image arulla kaget:
     "Arulla kaget.png"
     zoom 1
@@ -93,13 +100,16 @@ image arulla nangis:
     "Arulla nangis.png"
     zoom 1
 image arulla datar:
-    "Arulla datar.png"
-    zoom 1
+    "arulla baru.png"
+    zoom 3.55
 image mc takut:
     "MC_takut aja.png"
     zoom 0.5
 image polisi:
     "Polisi 1_Topi.png"
+    zoom 0.5
+image editor:
+    "Editor.png"
     zoom 0.5
 image staff:
     "staff.png"
@@ -112,13 +122,13 @@ image forum2:
     zoom 1
 image surat:
     "surat.png"
-    zoom 1
+    zoom 3
 image jaksa:
     "Jaksa aja.png"
     zoom 0.5
 image detektif:
     "Detektif.png"
-    zoom 1
+    zoom 0.5
 image penculik:
     "Penculik.png"
     zoom 0.5
@@ -127,22 +137,31 @@ image direktur:
     zoom 0.5
 image pegawai:
     "Pegawai 2.png"
-    zoom 1
-image pegawaiw:
-    "Pegawai 1.png"
-    zoom 1
+    zoom 0.5
+image walkot:
+    "walkot.png"
+    zoom 0.5
+image tikus:
+    "Paket Tikus.png"
+    zoom 0.5
+image babi:
+    "Paket Kepala Babi.png"
+    zoom 0.5
 image bg papan:
     "Meja investigasi prolog_plot 1.png"
-    zoom 0.7
+    zoom 1
 image bg papan gelap:
     "papan gelap.png"
-    zoom 0.7
+    zoom 1
+image bg kantor gelap:
+    "kantor gelap.png"
+    zoom 0.5
 image bg awal:
     "awal.png"
     zoom 0.7
 image bg tua:
-    "gedung tua.png"
-    zoom 0.7
+    "gedung tua .png"
+    zoom 1.25
 image bg laut:
     "Rumah dekat laut_rumah adat NTT.png"
     zoom 0.7
@@ -167,6 +186,12 @@ image bg ending 6:
 image bg ending 7:
     "ending 7.png"
     zoom 1
+image bg ending 8:
+    "ending 8.png"
+    zoom 1
+image bg ending 9:
+    "ending 9.png"
+    zoom 1
 image bg jaksa:
     "Kantor Kejaksaan.png"
     zoom 0.7
@@ -190,7 +215,7 @@ image bg anon:
     zoom 1
 image bg black:
     "black.png"
-    zoom 1
+    zoom 2
 image bg cerita:
     "cerita.png"
     zoom 1
@@ -214,12 +239,12 @@ image bg korban:
     zoom 1
 image bg rumah luar:
     "rumah luar.png"
-    zoom 1
+    zoom 3.5
 image bg rek:
     "rek.png"
     zoom 1
-image bg walkot:
-    "walkot.png"
+image bg kapol:
+    "kapol.png"
     zoom 1
 image bg bulan:
     "bulan.png"
@@ -235,19 +260,31 @@ image bg sn:
     zoom 1
 image bg hotel:
     "hotel.png"
-    zoom 1
+    zoom 0.5
 image bg lorong:
     "lorong.png"
-    zoom 1
+    zoom 0.5
 image bg inter:
     "Ruang Interogasi.png"
     zoom 1
 image bg tahan:
     "Ruang Tahanan.png"
     zoom 1
+image bg tolak:
+    "tolak.png"
+    zoom 1
+image bg tangkap:
+    "tangkap.png"
+    zoom 1
+image bg dark:
+    "dark.png"
+    zoom 1
+image bg govt:
+    "govt.png"
+    zoom 1
 
 label start:
-    scene bg awal with dissolve
+    scene bg papan gelap with dissolve
 
     $povname = renpy.input("Enter your name to start the investigation", length=32)
     $povname = povname.strip()
@@ -308,7 +345,7 @@ label choices1_a:
     jump choices1_common
 
 label choices1_b:
-    show i_mc serius at right
+    show i_mc serius at right with fade
     mc "{i}Sebelum memulai semua ini, setelah berhari-hari riset, aku menemukan mereka. Komunitas warga yang tidak hanya protes, tapi juga membawa bukti. Mereka pernah melaporkan sang walikota—meski selalu ditutup dengan alasan klasik: tidak terbukti.{/i}"
     mc "{i}Aku memutuskan untuk menghubungi mereka.{/i}"
     show forum1 at top with moveinbottom
@@ -319,7 +356,7 @@ label choices1_b:
     jump choices1_common
 
 label choices1_common:
-    scene bg papan with dissolve
+    scene bg papan with fade
     show i_mc serius
     mc "{i}Kutatap naskah final berita di laptopku.{/i}"
     mc "{i}Berita ini akan mengguncang kota. Akan menggoyahkan nama besar.{/i}"
@@ -348,6 +385,9 @@ label choices1_common:
     "{i}Tiba-tiba, bunyi ketukan di pintu memecah keheningan.{/i}"
     "{i}Sebuah kotak kecil tergeletak begitu saja di depan rumah. Tidak ada pengantar. Tidak ada suara.{/i}"
     show i_mc kaget
+    show tikus at truecenter
+    pause
+    hide tikus
     "{i}Isinya... lima bangkai tikus. Tanpa kepala.{/i}"
     label choices_ancaman:
         "Ancaman pertama."
@@ -388,9 +428,8 @@ label choices1_common:
     mc "Itu sudah dipublikasikan. Apa pun yang kamu lakukan, publik sudah tahu."
     pc "Berita bisa hilang. Bukti bisa dilenyapkan. Tapi kalau kamu mati... berita akan berhenti. Kamu ngerti maksudku?"
     mc "Aku ngerti. Tapi kamu juga harus ngerti satu hal: aku nggak sendiri."
-    pc "Salah satu dari dua hal akan terjadi di sini—kamu kasih data itu, atau kamu dikubur dengan berita-beritamu."
     label choices_bukti:
-        "Salah satu dari dua hal akan terjadi di sini—kamu kasih data itu, atau kamu dikubur dengan berita-beritamu."
+        pc "Salah satu dari dua hal akan terjadi di sini—kamu kasih data itu, atau kamu dikubur dengan berita-beritamu."
     menu:
         "Serahkan semua bukti":
             jump choices4_a
@@ -457,10 +496,11 @@ label choices1_common:
 
     label choices4_common:
     scene bg ending 1 with fade
+    pause
     return
 
     label choices2_b:
-    scene bg papan with fade
+    scene bg papan
     show i_mc serius
     "{i}Di bawah tulisan tajam itu, terpampang nama 'Sasaran'. Nama pena itu telah digunakan sejak tahun pertama kuliah—pilihan yang kini terasa semakin tepat. Dunia maya mengenalnya sebagai pengungkap fakta gelap, tapi dunia nyata tak tahu siapa di baliknya.{/i}"
     "{i}Tulisan terakhirnya viral. Nama 'Sasaran' kembali menjadi bahan pembicaraan. Banyak yang penasaran, bertanya-tanya, dan bahkan mencoba menebak siapa identitas di balik nama itu.{/i}"
@@ -502,8 +542,14 @@ label choices1_common:
     mc "{i}Bukan karena takut... tapi karena aku tahu, setelah ini, takkan ada jalan kembali.{/i}"
     mc "{i}Aku mengirim balasan lagi. '...Baik. Aku terima. Tapi ingat, ini bukan karena aku takut. Aku hanya… memilih bertahan hidup.'{/i}"
     scene bg bijak with fade
-    #TODO: editor
+    pause
+    scene bg kantor with fade
+    show i_mc serius at right
+    show i_editor at left
     mc "{i}Beberapa minggu berlalu. Aku kembali dengan nama asliku, mengenakan jas resmi dengan ID kantor tergantung di leher. Redaksi baruku dingin, bersih, dan berkilau—tapi penuh bisikan tak terdengar.{/i}"
+    e "Tulis soal aktor yang ribut sama pacarnya di Bali. Itu trending. Deadline sore ini."
+    mc "Baik..."
+    hide i_editor
     mc "{i}Setiap berita yang kutulis tentang korupsi, pembunuhan terselubung, atau rekayasa hukum… hilang. Tak satu pun naik tayang. Diganti dengan trivia, gosip, dan sensasi yang tak berarti.{/i}"
     mc "{i}Apakah ini yang mereka inginkan?{/i}"
     mc "{i}Seorang jurnalis yang diam, dengan pena yang tak lagi tajam?{/i}"
@@ -511,6 +557,7 @@ label choices1_common:
     mc "{i}Kadang aku berpikir, lebih baik aku mati sebagai seorang idealis…{/i}"
     mc "{i}Daripada hidup sebagai alat korporat yang bisu.{/i}"
     scene bg ending 2 with fade
+    pause
     return
             
     label choices2ba_b:
@@ -519,9 +566,9 @@ label choices1_common:
     label choices2b_b:
     scene bg kamar with fade
     show i_mc serius
-    "Aku bangun pagi ini dengan perasaan yang cukup aneh."
-    "Biasanya aku menyambut pagi dengan semangat, menyalakan TV sambil menyeduh kopi."
-    "Tapi hari ini… aku takut. Bukan takut pada berita. Tapi pada siapa yang mungkin jadi berita berikutnya."
+    mc "{i}Aku bangun pagi ini dengan perasaan yang cukup aneh.{/i}"
+    mc "{i}Biasanya aku menyambut pagi dengan semangat, menyalakan TV sambil menyeduh kopi.{/i}"
+    mc "{i}Tapi hari ini… aku takut. Bukan takut pada berita. Tapi pada siapa yang mungkin jadi berita berikutnya.{/i}"
     scene bg news with fade
     "{i}Seorang pemilik sekaligus pengelola panti asuhan Kasih Kita mengalami penyerangan malam tadi. Korban meninggal dunia karena pendarahan akut dan pisau yang dibalur dengan racun.{/i}"
     mc "{i}Tanganku gemetar memegang remote. Itu bukan korban biasa. Itu seseorang yang... pernah membantuku.{/i}"
@@ -531,7 +578,7 @@ label choices1_common:
     mc "{i}Aku…{/i}"
     mc "{i}Aku hanya ingin menyuarakan kebenaran. Tapi apakah harus ada nyawa yang dibayar untuk itu?{/i}"
     scene bg rumah luar with fade
-    show i_mc serius at right
+    show i_mc nangis at right
     mc "{i}Aku berjalan tanpa arah. Hanya ingin mencari udara. Mencari keheningan.{/i}"
     mc "{i}Sungai itu terlihat cantik dalam cahaya bulan. Tapi malam ini, ia seperti lubuk gelap yang memanggil.{/i}"
     mc "{i}Kugenggam surat kecil yang sudah kusiapkan. Kata-kataku di atas kertas, satu-satunya hal yang tak bisa mereka sensor.{/i}"
@@ -541,10 +588,11 @@ label choices1_common:
     mc "{i}Polisi menemukanku beberapa hari kemudian. Suratku basah, tapi masih bisa dibaca.{/i}"
     mc "{i}Di balik layar komputer… sang peneror tersenyum. Ia menang.{/i}"
     scene bg ending 3 with fade
+    pause
     return
 
 label choices0_b:
-scene bg kantor with fade
+scene bg kantor with pixellate
 show i_mc senang at left
 mc "{i}Aku duduk di kubik kerjaku, meniup pelan kopi panas yang baru saja kuambil dari pantry. Suasana masih tenang… sampai notifikasi itu masuk.{/i}"
 show i_zaki kaget at right
@@ -586,11 +634,11 @@ z "Proyek revitalisasi? Tapi ini bukan dana dari DPKAD…"
 mc "Berarti ada kemungkinan sumber dana dari luar anggaran resmi?"
 pg "Itu kalian yang harus buktikan. Tapi saya sarankan, coba cek bagian pengadaan dan kepegawaian. Kadang mereka yang tahu lebih dulu."
 scene bg walkot with fade
-show i_pegawaiw at left
+show i_walkot at left
 show i_mc serius
 show i_zaki serius at right
 pgw "Kalau soal rekening itu… beberapa staf pernah dengar, tapi nggak berani komentar. Yang jelas, beberapa hari ini ruangan kepala dinas dikunci terus."
-hide i_pegawaiw
+hide i_walkot
 show i_arulla datar at left
 mc "Kita makin dekat. Tapi kita belum punya cukup bukti untuk ditayangkan."
 z "Mungkin waktunya main ‘off the record’ sama orang dalam."
@@ -623,12 +671,15 @@ jump choicest_common
 label choicest_common:
 scene bg kantor with fade
 show i_mc serius
-mc "{i} Pagi itu, kami menemukan sebuah kotak misterius di depan pintu kantor. Tidak ada kurir, tidak ada pemberitahuan. Tapi yang membuatku gemetar… nama kami bertiga tertulis jelas di atas kotak itu.{/i}"
 show i_zaki emosi at right
 show i_arulla kaget at left
+mc "{i} Pagi itu, kami menemukan sebuah kotak misterius di depan pintu kantor. Tidak ada kurir, tidak ada pemberitahuan. Tapi yang membuatku gemetar… nama kami bertiga tertulis jelas di atas kotak itu.{/i}"
 z "Siapa yang ngirim ini?! Siapa yang berani main-main begini?!"
 a "Jangan dibuka dulu… baunya... itu bukan bau biasa..."
 "{i} Hanya satu benda di dalamnya.{/i}"
+show babi at truecenter
+pause
+hide babi
 show i_mc takut
 show i_arulla nangis at left
 "{i}Seekor kepala babi. Masih mentah. Bau amis darahnya menyengat.{/i}"
@@ -636,7 +687,7 @@ show i_arulla nangis at left
 "{i}Dan mereka tahu siapa kami.{/i}"
 z "Kita nggak bisa diam lagi! Ini… ini udah gila! Kita harus teriak ke publik! Semua orang harus tahu ini!"
 a "Kita harus berhenti. Ini bukan cuma soal data lagi. Kita bisa mati…"
-mc "{i}Dan di sinilah aku, berdiri di antara dua jurang.{i/}"
+mc "{i}Dan di sinilah aku, berdiri di antara dua jurang.{/i}"
 mc "{i} Menjaga nyawa…{/i}"
 label choices_t:
     mc "{i}Atau menyuarakan kebenaran.{/i}"
@@ -664,7 +715,8 @@ mc "{i}Menjalani hidup yang stabil, mengejar berita-berita ringan seperti cita-c
 scene bg papan gelap
 show i_mc serius
 mc "{i}Tapi jauh di dalam hati… aku tahu, kejahatan sang walikota mungkin tidak akan pernah terungkap.{/i}"
-scene bg ending 5 with fade
+scene bg ending 5 with fade 
+pause
 return
 
 label choicest_b:
@@ -680,16 +732,16 @@ scene bg black
 mc "{i}Artikel kami meledak. Bukan hanya masyarakat yang marah, tapi juga para jurnalis dari redaksi lain. Ternyata, kami bukan satu-satunya yang pernah diteror. Satu per satu mereka bergabung.{/i}"
 scene bg sn
 s "Kejadian ini adalah bentuk ancaman terhadap demokrasi. Ketika kebebasan pers mulai dibungkam, itu berarti Pancasila bangsa telah dilukai."
-"Staff Negara X Dipecat Setelah Komentar Kontroversial."
+"{i}'Staff Negara X Dipecat Setelah Komentar Kontroversial'.{/i}"
 mc "{i}Komentarnya viral, tapi posisinya hilang. Ia dipecat, diganti begitu saja… oleh sosok yang tidak banyak bicara, namun kami tahu siapa yang menarik benangnya.{/i}"
 scene bg kantor with fade
 show i_mc serius at left
 show i_zaki serius at right
-show surat at truecenter with moveinbottom
+show surat at truecenter with dissolve
 mc "{i}Sebuah undangan makan malam tiba. Hotel mewah, jamuan elegan. Bukan hanya kami — hampir seluruh jurnalis nasional diundang. Tidak disebutkan agenda, hanya silaturahmi dan apresiasi atas peran media.{/i}"
-hide surat with fade
+hide surat with dissolve
 show i_zaki emosi at right
-show i_mc serius
+show i_mc serius at center
 show i_arulla kaget at left
 z "Ini bukan silaturahmi. Ini bentuk tekanan."
 a "Kalau kita nggak datang… bukankah itu bisa jadi celah? Mereka bisa bilang kita anti-dialog."
@@ -709,6 +761,7 @@ mc "{i}Siapa tahu, satu langkah lebih dekat ke bukti.{/i}"
 show i_polisi at left
 show i_zaki serius at right
 show i_mc serius
+with fade
 p "Mohon maaf, sesuai prosedur keamanan, semua tamu dilarang membawa alat perekam, ponsel, atau perangkat elektronik lainnya."
 hide i_polisi
 show i_arulla datar at left
@@ -737,9 +790,7 @@ mc "{i}Tak ada satu pun terlihat mencolok.{/i}"
 mc "{i}Ini berisiko, tapi kali ini kami harus ambil jalan ini.{/i}"
 mc "{i}Kami datang dengan senyum.{/i}"
 mc "{i}Tapi kali ini... kami tidak datang dengan tangan kosong.{/i}"
-
-label choicesr_b:
-mc "{i} Sesuai dugaan.{/i}"
+mc "{i}Sesuai dugaan.{/i}"
 mc "{i}Jamuan ini bukan sekadar makan malam biasa.{/i}"
 mc "{i}Ruangan dijaga ketat oleh polisi dan tentara.{/i}"
 mc "{i}Tiap tamu diperiksa seperti penjahat.{/i}"
@@ -772,6 +823,7 @@ mc "{i}Mereka membalikkan segalanya.{/i}"
 scene bg tahan with fade
 mc "{i}Kami dikriminalisasi... dan akhirnya dijebloskan ke penjara.{/i}"
 scene bg ending 6 with fade
+pause
 return
 
 label choicese_b:
@@ -798,6 +850,7 @@ mc "{i}Artikel itu meledak.{/i}"
 mc "{i}Semua tikus itu tamat.{/i}"
 mc "{i}Berapapun mereka membayar polisi, bukti sekuat ini tak akan bisa membebaskan mereka dari jerat hukum.{/i}"
 scene bg ending 7 with fade
+pause
 return
 
 label choicesr_b:
@@ -809,15 +862,79 @@ mc "{i}Kami datang dengan tangan kosong.{/i}"
 mc "{i}Tak ada kamera, tak ada penyadap.{/i}"
 mc "{i}Hanya telinga kami yang kami bawa—siap menangkap setiap celah yang mereka buka.{/i}"
 mc "{i}Mereka mengira kami akan terlena oleh jamuan menjijikkan ini.{/i}"
-mc "{i}Padahal, kami justru mencatat./i}"
+mc "{i}Padahal, kami justru mencatat.{/i}"
 mc "{i}Nama-nama. Lokasi. Angka-angka. Semua tersimpan rapi di kepala kami.{/i}"
-scene bg kantor
+scene bg kantor with fade
 show i_mc serius
 show i_zaki serius at right
 show i_arulla datar at left
 z "Dengar, tadi dia sebut soal proyek fiktif di Pelabuhan Selatan. Kita mulai dari situ."
 a "Aku juga dengar soal perusahaan ‘topeng’ di balik dana pendidikan. Gila…"
 z "Ayo. Investigasi sesungguhnya dimulai."
+"{i}Malam berganti malam. Artikel ditulis, diedit, diverifikasi, dan disimpan di banyak tempat.{/i}"
+mc "{i}Kami tidak butuh alat canggih untuk menjatuhkan mereka.{/i}"
+mc "{i}Hanya butuh telinga yang tajam, niat yang keras, dan hati yang tidak bisa dibeli.{/i}"
+scene bg pub with fade
+"{i}'Kesaksian Diam: Bukti dan Aib di Balik Jamuan Pemerintah Kota XX'{/i}"
+mc "{i}Artikel kami sukses.{/i}"
+scene bg tangkap with fade
+mc "{i} Mereka ditangkap satu per satu.{/i}"
+scene bg kantor with fade
+show i_mc smirk
+show i_zaki smirk at right
+show i_arulla smirk at left
+mc "{i}Jalan menuju keadilan memang gelap, tapi tidak mustahil.{/i}"
+scene bg ending 8 with fade
+pause
+return
+
+label choicesm_b:
+mc "{i}Kami tahu apa yang mungkin terjadi kalau kami datang ke jamuan itu.{/i}"
+mc "{i}Tekanan. Ancaman. Mungkin juga kehilangan—antara nyawa atau karier.{/i}"
+mc "{i}Jadi kami memilih tidak datang.{/i}"
+show i_mc serius
+show i_zaki emosi at right
+show i_arulla datar at left
+mc "{i}Tapi yang tidak kami duga adalah…{/i}"
+scene bg tolak with fade
+mc "{i}Bahkan tanpa hadir pun, tekanan itu datang.{/i}"
+scene bg kantor with fade
+show i_mc serius
+show i_zaki emosi at right
+show i_arulla datar at left
+z "Ini artikel keempat yang ditolak minggu ini. Padahal buktinya sudah lengkap!"
+a "Kayaknya… mereka mulai menekan dari atas."
+mc "Entah bagaimana, semua artikel investigasi kami tentang kasus korupsi... ditolak mentah-mentah."
+scene bg kantor gelap with fade
+mc "{i}Pergerakan kami dibatasi.{/i}"
+mc "{i}Entah siapa yang menarik tali di atas sana, tapi jelas kami sedang dikekang secara perlahan.{/i}"
+mc "{i}Karena semua pintu resmi tertutup, kami mencari jalan lain.{/i}"
+mc "{i}Kami menghubungi pihak ketiga.{/i}"
+scene bg dark with fade
+mc "{i}Ada yang menyarankan whistleblower. Ada yang membisikkan nama web misterius.{/i}"
+mc "{i}Pilihan mana pun yang kami ambil, tujuannya sama—membuat suara kami tetap terdengar.{/i}"
+mc "{i}Namun tekanan yang kami dapat semakin kuat.{/i}"
+mc "{i}Telepon gelap. Surat ancaman.{/i}"
+mc "{i}Proses penyelidikan kami… lambat. Nyaris stagnan.{/i}"
+mc "{i}Sementara itu, para tikus di luar sana membangun pondasi kekuasaan yang kokoh, dan tak bisa disentuh.{/i}"
+scene bg govt with fade
+"{i}'Pemerintah Baru Dilantik'{/i}"
+mc "{i}Tak sampai setahun setelah kepala babi itu tiba di depan kantor kami, pemerintah baru terbentuk.{/i}"
+mc "{i}Mereka berasal dari lingkaran yang sama.{/i}"
+mc "{i}Dan kini mereka mulai membuat kebijakan yang tak masuk akal—termasuk membatasi kebebasan pers.{/i}"
+scene bg kantor gelap with fade
+mc "{i}Departemen kami dibubarkan.{/i}"
+mc "{i}Zaki menghilang. Arulla berhenti total dari dunia jurnalisme.{/i}"
+scene bg papan gelap with fade
+mc "{i}Dan aku...{/i}"
+mc "{i}Aku tetap menulis, meski dari tempat yang tidak lagi dianggap sebagai kantor.{/i}"
+mc "{i}Bekerja dari bawah tanah.{/i}"
+mc "{i}Entah sampai kapan.{/i}"
+scene bg ending 9 with fade
+pause
+return
+
+
 
 
 
