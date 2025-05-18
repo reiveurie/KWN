@@ -1,3 +1,4 @@
+
 image i_mc senang = At('mc senang', sprite_highlight('mc'))
 image i_mc serius = At('mc serius', sprite_highlight('mc'))
 image i_mc takut = At('mc takut', sprite_highlight('mc'))
@@ -342,10 +343,12 @@ label choices1_a:
     mc "..."
     mc "Kalau saya takut tekanan, saya tidak akan memulai ini dari awal."
     mc "{i}Aku tahu langkah ini mengubah segalanya. Tapi lebih baik mati karena kebenaran... daripada hidup di antara kebohongan yang kubiarkan sendiri.{/i}"
+    stop music fadeout 1.0
     jump choices1_common
 
 label choices1_b:
     show i_mc serius at right with fade
+    play music "audio/Tegang.mp3" fadein 1.0 volume 0.5
     mc "{i}Sebelum memulai semua ini, setelah berhari-hari riset, aku menemukan mereka. Komunitas warga yang tidak hanya protes, tapi juga membawa bukti. Mereka pernah melaporkan sang walikota—meski selalu ditutup dengan alasan klasik: tidak terbukti.{/i}"
     mc "{i}Aku memutuskan untuk menghubungi mereka.{/i}"
     show forum1 at top with moveinbottom
@@ -372,17 +375,23 @@ label choices1_common:
     mc "{i}Aku tahu risikonya: intimidasi, gugatan hukum, bahkan ancaman fisik. Tapi kalau aku ingin warga percaya pada berita ini, aku sendiri harus berdiri di depannya.{/i}"
     mc "{i}Tak ada lagi ruang untuk keraguan.{/i}"
     "{i}Klik.{/i}"
+    play sound "audio/Klik.mp3" volume 0.5
     "{i}Tombol “Publikasikan” ditekan.{/i}"
     "{i}Berita itu tayang. Lengkap dengan data pendukung, kronologi kasus, dan satu nama yang menjadi pusat semuanya: Walikota Tralalelo tralala.{/i}"
+    stop music fadeout 1.0
     scene bg comments with fade
+    play music "audio/Damai.mp3" fadein 1.0 volume 0.5
     mc "{i}Dalam satu malam, aku berubah dari wartawan lepas tak dikenal menjadi sorotan nasional.{/i}"
     mc "{i}Ada yang mendukung. Ada yang mengancam. Tapi semuanya membaca. Dan itu yang paling penting.{/i}"
     scene bg papan with fade
     "Namun.. ternyata hal tersebut bukanlah hal yang dapat berlalu begitu saja dengan ketenangan."
     "Pagi itu datang dengan semangat baru. Meski berita besar telah dirilis semalam, rasanya belum cukup sebelum sang walikota benar-benar ditangkap."
+    stop music fadeout 1.0
     show i_mc serius
+    play music "audio/Tegang.mp3" fadein 1.0 volume 0.5
     mc "{i}Aku kembali membuka laptop, berharap menemukan jejak tambahan yang bisa menjeratnya lebih dalam.{/i}"
     "{i}Tiba-tiba, bunyi ketukan di pintu memecah keheningan.{/i}"
+    play sound "audio/Ketukan.mp3" volume 0.5
     "{i}Sebuah kotak kecil tergeletak begitu saja di depan rumah. Tidak ada pengantar. Tidak ada suara.{/i}"
     show i_mc kaget
     show tikus at truecenter
@@ -396,15 +405,19 @@ label choices1_common:
             jump choices3_a
         "Diamkan ":
             jump choices3_b
+    stop music fadeout 1.0
     label choices3_a:
     scene bg kamar with fade
+    play music "audio/Damai.mp3" fadein 1.0 volume 0.5
     show i_mc serius
     mc "{i}Tentu saja mereka mencoba menakutiku. Tapi ini hanya memperkuat keyakinanku: aku sedang menyentuh sarang yang selama ini dibiarkan utuh.{/i}"
     mc "{i}Mereka berpikir ancaman menjijikkan bisa memadamkan apa yang sudah kubakar.{/i}"
     mc "{i}Kukirim ulang beritanya, kali ini dengan lampiran ancaman. Masyarakat berhak tahu, bahkan tentang bahayanya.{/i}"
     "{i}Dalam beberapa jam, tulisan itu viral.{/i}"
     "{i}Dari simpati muncul keberanian kolektif. Dari keraguan lahir gerakan. Dari suara satu orang, tumbuh gema.{/i}"
+    stop music fadeout 1.0
     label choices_tolak:
+    play music "audio/Tegang.mp3" fadein 1.0 volume 0.5
     mc "{i}Aku mengira semuanya selesai. Ternyata belum.{/i}"
     scene bg anon with fade
     "Email masuk, tanpa subjek. Isinya hanya dua baris:"
@@ -415,7 +428,9 @@ label choices1_common:
     mc "{i}Kukunci pintu. Kuselipkan alat darurat ke dalam tas kecilku—senter kecil, cutter, bahkan sebotol semprotan lada.{/i}"
     mc "{i}Kupikir aku siap.{/i}"
     mc "{i}Tapi pagi itu, petugas kebersihan yang biasa menyapu gangku… ternyata bukan petugas.{/i}"
+    stop music fadeout 1.0
     scene bg tua with fade
+    play music "audio/Adrenalin.mp3" fadein 1.0 volume 0.5
     "{i}Ruangan itu lembap, dinding-dindingnya ditumbuhi lumut. Bau besi karat dan debu menyengat. Tali di pergelangan tangannya sudah mulai menggesek kulit, tapi ia tak peduli.{/i}"
     show i_mc nangis at right
     show i_penculik at left
@@ -444,13 +459,18 @@ label choices1_common:
     mc "Oke. Tapi janji... lepasin aku."
     pc "Buktinya?"
     mc "Drive-nya ada di rumah. Laptopku. Aku kasih semuanya. Asal... jangan cari yang lain."
+    stop music fadeout 1.0
     scene bg papan with dissolve
+    play music "audio/Sedih.mp3" fadein 1.0 volume 0.5
     "{i}Ia duduk di depan laptopnya. Tangan gemetar saat memilih file demi file.{/i}"
     mc "{i}Maaf... semuanya...{/i}"
     "{i}Satu klik, folder bukti terunggah ke link yang telah disiapkan oleh penculik.{/i}"
+    play sound "audio/Klik.mp3" volume 0.5
     scene bg black with fade
     pc "Pintar. Hidup terus, ya. Tapi jangan pikir bisa kembali."
+    stop music fadeout 1.0
     scene bg rumah laut with fade
+    play music "audio/Damai.mp3" fadein 1.0 volume 0.5
     show i_mc serius
     "{i}Angin masih menerpa tirai tipis di jendela. Lampu meja menyala redup. Di depannya, laptop terbuka, tapi tak ada folder bernama 'korupsi' atau 'bukti'.{/i}"
     scene bg anon with fade
@@ -465,15 +485,18 @@ label choices1_common:
     "{i}Terdengar konyol. Tapi kali ini, tidak ada ancaman. Tidak ada teror. Hanya cerita. Dan sunyi.{/i}"
     mc "Aku masih bisa menulis. Cuma... bukan lagi untuk menyulut, tapi untuk menyembuhkan."
     "{i}Ia menekan save. Di pojok bawah tidak lagi tertulis namanya, yang tertulis hanya lah sebuah identitas kosong 'Anonim'.{/i}"
+    stop music fadeout 1.0
     jump choices4_common
 
     label choices4_b:
+    play music "audio/Adrenalin.mp3" fadein 1.0 volume 0.5
     pc "Waktu habis. Bukti atau nyawa."
     show i_mc nangis at right
     mc "Kau pikir semua ini akan berhenti kalau aku mati? Akan ada yang meneruskan..."
     "{i}Penculik mencengkeram kerah bajunya dan mengangkat senjatanya lebih dekat.{/i}"
     mc "{i}Sial… ini akhirnya…{/i}"
     "{i}BRAK! Pintu gudang didobrak terbuka. Cahaya senter menyorot tajam ke arah mereka.{/i}"
+    play sound "audio/Brak.mp3" volume 0.5
     dt "Lepaskan dia! Tangan di atas kepala sekarang!"
     "{i}Beberapa orang bersenjata masuk, salah satunya mengenakan jas panjang. Detektif.{/i}"
     hide i_penculik
@@ -481,7 +504,9 @@ label choices1_common:
     dt "Kita dapat koordinat dari salah satu sumber yang kau hubungi sebelum diputus. Kau beruntung."
     show i_mc senang at right
     "{i}Penculik dilumpuhkan. [povname] nyaris roboh, namun segera ditopang seseorang—bukan petugas, tapi seorang perempuan dengan kacamata tegas dan ID card bertuliskan Direksi Media Aras.{/i}"
+    stop music fadeout 1.0
     scene bg kantor with fade
+    play music "audio/Damai.mp3" fadein 1.0 volume 0.5
     show i_mc senang at right
     show i_direktur at left
     "{i}Satu minggu kemudian. Suasana kantor penuh aktivitas. Ia kini duduk di kursi putar di ruang kaca kecil yang bertuliskan 'Editor Tamu–[povname]'.{/i}"
@@ -492,6 +517,7 @@ label choices1_common:
     show i_mc senang at right
     "{i}Ia menatap layar laptop barunya. File baru dibuka. Judulnya masih kosong.{/i}"
     mc "Mungkin... ini bab berikutnya."
+    stop music fadeout 1.0
     jump choices4_common
 
     label choices4_common:
@@ -501,6 +527,7 @@ label choices1_common:
 
     label choices2_b:
     scene bg papan
+    play music "audio/Misterius.mp3" fadein 1.0 volume 0.5
     show i_mc serius
     "{i}Di bawah tulisan tajam itu, terpampang nama 'Sasaran'. Nama pena itu telah digunakan sejak tahun pertama kuliah—pilihan yang kini terasa semakin tepat. Dunia maya mengenalnya sebagai pengungkap fakta gelap, tapi dunia nyata tak tahu siapa di baliknya.{/i}"
     "{i}Tulisan terakhirnya viral. Nama 'Sasaran' kembali menjadi bahan pembicaraan. Banyak yang penasaran, bertanya-tanya, dan bahkan mencoba menebak siapa identitas di balik nama itu.{/i}"
@@ -526,7 +553,9 @@ label choices1_common:
             jump choices2ba_a
         "Tolak":
             jump choices2ba_b
+    stop music fadeout 1.0
     label choices2ba_a:
+    play music "audio/Tegang.mp3" fadein 1.0 volume 0.5
     scene bg papan
     show i_mc serius
     mc "{i}Ancaman nyawaku, artikel yang tak lagi aman, dan tawaran yang terlalu rapi untuk jadi kebetulan...{/i}"
@@ -542,7 +571,9 @@ label choices1_common:
     mc "{i}Bukan karena takut... tapi karena aku tahu, setelah ini, takkan ada jalan kembali.{/i}"
     mc "{i}Aku mengirim balasan lagi. '...Baik. Aku terima. Tapi ingat, ini bukan karena aku takut. Aku hanya… memilih bertahan hidup.'{/i}"
     scene bg bijak with fade
+    stop music fadeout 1.0
     pause
+    play music "audio/Damai.mp3" fadein 1.0 volume 0.5
     scene bg kantor with fade
     show i_mc serius at right
     show i_editor at left
@@ -557,6 +588,7 @@ label choices1_common:
     mc "{i}Kadang aku berpikir, lebih baik aku mati sebagai seorang idealis…{/i}"
     mc "{i}Daripada hidup sebagai alat korporat yang bisu.{/i}"
     scene bg ending 2 with fade
+    stop music fadeout 1.0
     pause
     return
             
@@ -564,11 +596,14 @@ label choices1_common:
     jump choices_tolak
         
     label choices2b_b:
+    play music "audio/.mp3" fadein 1.0 volume 0.5
     scene bg kamar with fade
     show i_mc serius
     mc "{i}Aku bangun pagi ini dengan perasaan yang cukup aneh.{/i}"
     mc "{i}Biasanya aku menyambut pagi dengan semangat, menyalakan TV sambil menyeduh kopi.{/i}"
     mc "{i}Tapi hari ini… aku takut. Bukan takut pada berita. Tapi pada siapa yang mungkin jadi berita berikutnya.{/i}"
+    stop music fadeout 1.0
+    play music "audio/Tegang.mp3" fadein 1.0 volume 0.5
     scene bg news with fade
     "{i}Seorang pemilik sekaligus pengelola panti asuhan Kasih Kita mengalami penyerangan malam tadi. Korban meninggal dunia karena pendarahan akut dan pisau yang dibalur dengan racun.{/i}"
     mc "{i}Tanganku gemetar memegang remote. Itu bukan korban biasa. Itu seseorang yang... pernah membantuku.{/i}"
@@ -577,6 +612,8 @@ label choices1_common:
     mc "{i}Mereka tahu siapa saja yang berarti untukku.{/i}"
     mc "{i}Aku…{/i}"
     mc "{i}Aku hanya ingin menyuarakan kebenaran. Tapi apakah harus ada nyawa yang dibayar untuk itu?{/i}"
+    stop music fadeout 1.0
+    play music "audio/Sedih.mp3" fadein 1.0 volume 0.5
     scene bg rumah luar with fade
     show i_mc nangis at right
     mc "{i}Aku berjalan tanpa arah. Hanya ingin mencari udara. Mencari keheningan.{/i}"
@@ -589,369 +626,6 @@ label choices1_common:
     mc "{i}Di balik layar komputer… sang peneror tersenyum. Ia menang.{/i}"
     scene bg ending 3 with fade
     pause
+    stop music fadeout 1.0
     return
-
-label choices0_b:
-scene bg kantor with pixellate
-show i_mc senang at left
-mc "{i}Aku duduk di kubik kerjaku, meniup pelan kopi panas yang baru saja kuambil dari pantry. Suasana masih tenang… sampai notifikasi itu masuk.{/i}"
-show i_zaki kaget at right
-z "Hah? Lihat ini…"
-scene bg rek with fade
-mc "“Ini… jumlahnya gila banget. Dan rekening tujuan ini… kelihatan aneh."
-scene bg kantor with fade
-show i_mc serius
-show i_zaki kaget at right
-show i_arulla kaget at left
-a "Apakah nggak sebaiknya kita lapor ke polisi dulu? Aku merasa ini bisa aja jebakan…"
-z "Apa?! Arul, data sekuat ini nggak bisa kita diamkan! Kalau kita nunggu dan ternyata benar, publik bisa dirugikan!"
-label choices_saran:
-    mc "{i}Zaki emosi. Arulla ragu. Tapi aku harus mengambil keputusan. Ini bisa jadi titik awal, atau justru awal kehancuran.{/i}"
-menu:
-    "Terima saran Zaki. {i}Kita harus bertindak. Kita selidiki dulu dan publikasikan jika perlu.{/i}":
-        jump choices_z
-    "Terima saran Arulla. {i}Arulla ada benarnya. Kita nggak bisa gegabah. Lapor dulu.{/i}":
-        jump choices_a
-
-label choices_z:
-mc "Arulla, aku ngerti kekhawatiranmu… tapi aku pikir Zaki benar kali ini."
-show i_zaki serius at right
-z "Serius? Jadi kita ambil langkah ini?"
-show i_mc serius
-mc "Iya, kita ambil langkah, tapi tetap hati-hati. Data ini terlalu besar untuk langsung diumumkan. Kita butuh konfirmasi tambahan."
-show i_zaki smirk at right
-z "Akhirnya! Aku setuju banget. Kita gali lebih dalam. Besok kita ke kejaksaan dulu."
-a "Kalau ini jebakan, aku harap kita cukup siap menanggung risikonya..."
-mc "Kita kerja berdasarkan data, bukan asumsi. Dan kita nggak sendirian."
-scene bg jaksa with fade
-show i_mc serius 
-show i_zaki serius at right
-show i_pegawai at left
-pg "Maaf, kami tidak bisa memberikan data detail tanpa surat resmi. Tapi... kalau maksud kalian soal aliran dana proyek revitalisasi, itu memang sempat jadi pembicaraan di internal."
-hide i_pegawai
-show i_arulla datar at left
-z "Proyek revitalisasi? Tapi ini bukan dana dari DPKAD…"
-mc "Berarti ada kemungkinan sumber dana dari luar anggaran resmi?"
-pg "Itu kalian yang harus buktikan. Tapi saya sarankan, coba cek bagian pengadaan dan kepegawaian. Kadang mereka yang tahu lebih dulu."
-scene bg kapol with fade
-show i_walkot at left
-show i_mc serius
-show i_zaki serius at right
-pgw "Kalau soal rekening itu… beberapa staf pernah dengar, tapi nggak berani komentar. Yang jelas, beberapa hari ini ruangan kepala dinas dikunci terus."
-hide i_walkot
-show i_arulla datar at left
-mc "Kita makin dekat. Tapi kita belum punya cukup bukti untuk ditayangkan."
-z "Mungkin waktunya main ‘off the record’ sama orang dalam."
-a "Atau kita akan memancing masalah yang lebih besar dari yang kita duga."
-mc "{i}Kebenaran memang nggak pernah datang tanpa harga. Tapi sekarang kita sudah terlalu dalam untuk mundur.{/i}"
-jump choicest_common
-
-label choices_a:
-mc "Arulla ada benarnya. Kita nggak bisa gegabah. Data ini anonim, dan kalau ini jebakan… kita yang habis."
-show i_zaki emosi at right
-show i_arulla datar at left
-z "Jadi kita lapor polisi? Dan nunggu? Sementara orang-orang yang bersalah bisa ngelap jejak mereka?"
-a "Zaki… kita cuma mau semua ini tetap aman. Buat kita juga."
-mc "Aku ngerti kamu frustasi. Tapi ini suara terbanyak. Kita serahkan dulu ke pihak yang berwenang."
-scene bg bulan with fade
-scene bg kantor with fade
-show i_zaki emosi at right
-show i_mc serius
-show i_arulla datar at left
-z "Sudah sebulan, dan nggak ada kabar apa-apa! Mereka nunda, nutupin, atau… atau emang sengaja?"
-mc "Zaki, tolong… sabar dulu. Mungkin mereka sedang kumpulkan bukti…"
-z "Atau mungkin mereka nggak akan pernah bertindak. Dan saat kita terus nunggu, kasus ini hilang begitu aja!"
-show i_mc takut
-a "Aku juga mulai ngerasa aneh. Tapi kalau kita nekat sekarang, bisa-bisa kita yang kena."
-mc "{i} Aku terus menenangkannya. Tapi di dalam hati, aku juga mulai ragu.{/i}"
-mc "{i}Apa ini memang jebakan?{/i}"
-mc "{i} Atau… ada sesuatu yang jauh lebih besar, yang menunggu di depan?{/i}"
-jump choicest_common
-
-label choicest_common:
-scene bg kantor with fade
-show i_mc serius
-show i_zaki emosi at right
-show i_arulla kaget at left
-mc "{i} Pagi itu, kami menemukan sebuah kotak misterius di depan pintu kantor. Tidak ada kurir, tidak ada pemberitahuan. Tapi yang membuatku gemetar… nama kami bertiga tertulis jelas di atas kotak itu.{/i}"
-z "Siapa yang ngirim ini?! Siapa yang berani main-main begini?!"
-a "Jangan dibuka dulu… baunya... itu bukan bau biasa..."
-"{i} Hanya satu benda di dalamnya.{/i}"
-show babi at truecenter
-pause
-hide babi
-show i_mc takut
-show i_arulla nangis at left
-"{i}Seekor kepala babi. Masih mentah. Bau amis darahnya menyengat.{/i}"
-"{i}Ini bukan peringatan biasa. Ini ancaman.{/i}"
-"{i}Dan mereka tahu siapa kami.{/i}"
-z "Kita nggak bisa diam lagi! Ini… ini udah gila! Kita harus teriak ke publik! Semua orang harus tahu ini!"
-a "Kita harus berhenti. Ini bukan cuma soal data lagi. Kita bisa mati…"
-mc "{i}Dan di sinilah aku, berdiri di antara dua jurang.{/i}"
-mc "{i} Menjaga nyawa…{/i}"
-label choices_t:
-    mc "{i}Atau menyuarakan kebenaran.{/i}"
-menu:
-    "Tinggalkan kasus demi keselamatan":
-        jump choicest_a
-    "Publikasi berita teror terhadap jurnalis":
-        jump choicest_b
-
-label choicest_a:
-mc "{i} Setelah semalam tanpa tidur, aku membuat keputusan.{/i}"
-mc "{i}Keselamatan kami… jauh lebih penting daripada semuanya.{/i}"
-show i_mc serius
-mc "Kita mundur. Sampai di sini saja."
-a "Terima kasih… aku nggak tahu harus bagaimana kalau kamu tetap maju."
-show i_zaki serius at right
-z "Baik. Tapi aku nggak akan berhenti. Aku akan cari jalanku sendiri."
-scene bg hari with fade
-mc "{i}Arulla mengundurkan diri keesokan harinya. Katanya ia ingin hidup yang tenang bersama keluarganya.{/i}"
-mc "{i}Zaki… dia tetap bertarung, tapi sendirian. Aku tidak tahu ke mana dia pergi setelah itu.{/i}"
-scene bg papan with fade
-show i_mc serius
-mc "{i}Dan aku… tetap di sini.{/i}"
-mc "{i}Menjalani hidup yang stabil, mengejar berita-berita ringan seperti cita-citaku waktu kecil.{/i}"
-scene bg papan gelap
-show i_mc serius
-mc "{i}Tapi jauh di dalam hati… aku tahu, kejahatan sang walikota mungkin tidak akan pernah terungkap.{/i}"
-scene bg ending 5 with fade 
-pause
-return
-
-label choicest_b:
-mc "{i}Kami memutuskan untuk tidak diam.{/i}"
-mc "{i}Kami mempublikasikan teror itu.{/i}"
-mc "{i}Kami percaya… jika kami bersuara, kami tidak akan sendirian.{/i}"
-scene bg pub with fade
-"{i}Artikel diunggah, ratusan komentar dan retweet menyambutnya{/i}."
-z "Kita mulai perang ini… Tapi kali ini, kita punya penonton."
-a "Semoga ini cukup buat bikin mereka takut."
-scene bg hari with fade
-scene bg black
-mc "{i}Artikel kami meledak. Bukan hanya masyarakat yang marah, tapi juga para jurnalis dari redaksi lain. Ternyata, kami bukan satu-satunya yang pernah diteror. Satu per satu mereka bergabung.{/i}"
-scene bg sn
-s "Kejadian ini adalah bentuk ancaman terhadap demokrasi. Ketika kebebasan pers mulai dibungkam, itu berarti Pancasila bangsa telah dilukai."
-"{i}'Staff Negara X Dipecat Setelah Komentar Kontroversial'.{/i}"
-mc "{i}Komentarnya viral, tapi posisinya hilang. Ia dipecat, diganti begitu saja… oleh sosok yang tidak banyak bicara, namun kami tahu siapa yang menarik benangnya.{/i}"
-scene bg kantor with fade
-show i_mc serius at left
-show i_zaki serius at right
-show surat at truecenter with dissolve
-mc "{i}Sebuah undangan makan malam tiba. Hotel mewah, jamuan elegan. Bukan hanya kami — hampir seluruh jurnalis nasional diundang. Tidak disebutkan agenda, hanya silaturahmi dan apresiasi atas peran media.{/i}"
-hide surat with dissolve
-show i_zaki emosi at right
-show i_mc serius at center
-show i_arulla kaget at left
-z "Ini bukan silaturahmi. Ini bentuk tekanan."
-a "Kalau kita nggak datang… bukankah itu bisa jadi celah? Mereka bisa bilang kita anti-dialog."
-label choices_m:
-    mc "{i}Dua arah terbentang di hadapan kami…{/i}"
-menu:
-    "Datang ke Jamuan Makan Malam":
-        jump choicesm_a
-    "Tidak Datang":
-        jump choicesm_b
-
-label choicesm_a:
-scene bg lorong with fade
-mc "{i}Kami memutuskan untuk datang.{/i}"
-mc "{i} Berada di kandang yang sama dengan lawan... adalah kesempatan terbaik untuk menggali lebih dalam.{/i}"
-mc "{i}Siapa tahu, satu langkah lebih dekat ke bukti.{/i}"
-show i_polisi at left
-show i_zaki serius at right
-show i_mc serius
-with fade
-p "Mohon maaf, sesuai prosedur keamanan, semua tamu dilarang membawa alat perekam, ponsel, atau perangkat elektronik lainnya."
-hide i_polisi
-show i_arulla datar at left
-z "Mereka tahu... Mereka tahu kita akan coba menyadap."
-a "Kita tetap masuk? Atau pulang saja?"
-mc "{i}Kami menepi sebentar dari antrean masuk.{/i}"
-label choices_r:
-    mc "{i} Rapat kecil di lorong hotel jadi tempat penentu.{/i}"
-menu:
-    "Sembunyikan penyadap dan kamera mini":
-        jump choicesr_a
-    "Turuti aturan dan masuk dengan tangan kosong":
-        jump choicesr_b
-
-label choicesr_a:
-mc "{i} Zaki dulunya anak SMK kelistrikan.{/i}"
-mc "{i} Meski kini lebih akrab dengan kata dan data, kemampuannya tidak sepenuhnya hilang—dan koneksinya lebih hidup dari sebelumnya.{/i}"
-show i_zaki senyum at right
-z "Aku sudah menduga hal ini sebelumnya. Ini kamera mini, bisa merekam suara dan gambar. Kalau kutaruh di jas kamu, enggak bakal ada yang curiga."
-show i_arulla kaget at left
-a "Kok bisa nemu alat begini secepat itu?"
-show i_zaki smirk at right
-z "Ada teman lamaku yang biasanya bikin ini buat sasaeng. Tapi karena kali ini buat keadilan, dia kasih gratis. Lumayan mahal kalau beli."
-mc "{i}Kami menyematkan kamera-kamera kecil itu di kancing jas, bros, bahkan di mata boneka gantungan Arulla.{/i}"
-mc "{i}Tak ada satu pun terlihat mencolok.{/i}"
-mc "{i}Ini berisiko, tapi kali ini kami harus ambil jalan ini.{/i}"
-mc "{i}Kami datang dengan senyum.{/i}"
-mc "{i}Tapi kali ini... kami tidak datang dengan tangan kosong.{/i}"
-mc "{i}Sesuai dugaan.{/i}"
-mc "{i}Jamuan ini bukan sekadar makan malam biasa.{/i}"
-mc "{i}Ruangan dijaga ketat oleh polisi dan tentara.{/i}"
-mc "{i}Tiap tamu diperiksa seperti penjahat.{/i}"
-mc "Kita jalankan rencana."
-mc "{i}Kami sudah menyiapkan semua ini.{/i}"
-label choices_e:
-    mc "{i}Sekarang waktunya eksekusi.{/i}"
-menu:
-    "Menghindari pemeriksaan":
-        jump choicese_a
-    "Berusaha tetap santai":
-        jump choicese_b
-
-label choicese_a:
-mc "{i}Kami memilih untuk menghindari pemeriksaan.{/i}"
-mc "{i}Menyelinap lewat celah kecil di antara para tamu dan penjaga.{/i}"
-mc "{i}Kami kira kami cukup hati-hati...{/i}"
-mc "{i}Tapi mereka ternyata lebih siap dari dugaan kami.{/i}"
-hide i_arulla datar
-show i_polisi at left
-p "Temuan alat ilegal. Bawa mereka ke ruang interogasi."
-scene bg inter with fade
-show i_mc serius
-show i_zaki serius at right
-show i_arulla datar at left
-mc "{i}Kamera ditemukan. Penyadap pun terbongkar.{/i}"
-mc "{i}Dalam berita keesokan harinya, kami bukan jurnalis.{/i}"
-mc "{i}Kami adalah 'penyusup bersenjata alat spionase'.{/i}"
-mc "{i}Mereka membalikkan segalanya.{/i}"
-scene bg tahan with fade
-mc "{i}Kami dikriminalisasi... dan akhirnya dijebloskan ke penjara.{/i}"
-scene bg ending 6 with fade
-pause
-return
-
-label choicese_b:
-mc "{i}Aku memutuskan untuk tetap santai.{/i}"
-mc "{i}Kami tidak bisa kabur dari pemeriksaan, tapi kami juga tidak bisa menunjukkan rasa takut.{/i}"
-mc "{i}Kami menyamarkan kamera itu sebaik mungkin.{/i}"
-mc "{i}Kalau pun mereka tak melihat, metal detector bisa saja menangkapnya.{/i}"
-mc "{i}Tapi keajaiban terjadi—kami berhasil masuk.{/i}"
-scene bg hotel with fade
-show i_mc serius
-show i_zaki serius at right
-show i_arulla datar at left
-mc "{i}Kami mendapatkan semua bukti yang kami butuhkan.{/i}"
-mc "{i}Rekaman, foto, percakapan.{/i}"
-mc "{i}Semua dikumpulkan rapi, ditranskrip hati-hati, dan dicocokkan dengan data sebelumnya.{/i}"
-scene bg kantor
-show i_mc serius
-show i_zaki serius at right
-show i_arulla datar at left
-mc "Kita simpan salinan di semua perangkat. Cloud, flashdisk, bahkan kartu SIM."
-a "Kalau satu dihancurkan, puluhan lainnya akan tetap menyala."
-"{i}Pagi hari. Artikel dipublikasikan. Judul mencolok: 'Teror dan Korupsi: Malam Gelap di Balik Pemerintahan Kota XX'.{/i}"
-mc "{i}Artikel itu meledak.{/i}"
-mc "{i}Semua tikus itu tamat.{/i}"
-mc "{i}Berapapun mereka membayar polisi, bukti sekuat ini tak akan bisa membebaskan mereka dari jerat hukum.{/i}"
-scene bg ending 7 with fade
-pause
-return
-
-label choicesr_b:
-scene bg hotel with fade
-show i_mc serius
-show i_zaki serius at right
-show i_arulla datar at left
-mc "{i}Kami datang dengan tangan kosong.{/i}"
-mc "{i}Tak ada kamera, tak ada penyadap.{/i}"
-mc "{i}Hanya telinga kami yang kami bawa—siap menangkap setiap celah yang mereka buka.{/i}"
-mc "{i}Mereka mengira kami akan terlena oleh jamuan menjijikkan ini.{/i}"
-mc "{i}Padahal, kami justru mencatat.{/i}"
-mc "{i}Nama-nama. Lokasi. Angka-angka. Semua tersimpan rapi di kepala kami.{/i}"
-scene bg kantor with fade
-show i_mc serius
-show i_zaki serius at right
-show i_arulla datar at left
-z "Dengar, tadi dia sebut soal proyek fiktif di Pelabuhan Selatan. Kita mulai dari situ."
-a "Aku juga dengar soal perusahaan ‘topeng’ di balik dana pendidikan. Gila…"
-z "Ayo. Investigasi sesungguhnya dimulai."
-"{i}Malam berganti malam. Artikel ditulis, diedit, diverifikasi, dan disimpan di banyak tempat.{/i}"
-mc "{i}Kami tidak butuh alat canggih untuk menjatuhkan mereka.{/i}"
-mc "{i}Hanya butuh telinga yang tajam, niat yang keras, dan hati yang tidak bisa dibeli.{/i}"
-scene bg pub with fade
-"{i}'Kesaksian Diam: Bukti dan Aib di Balik Jamuan Pemerintah Kota XX'{/i}"
-mc "{i}Artikel kami sukses.{/i}"
-scene bg tangkap with fade
-mc "{i} Mereka ditangkap satu per satu.{/i}"
-scene bg kantor with fade
-show i_mc smirk
-show i_zaki smirk at right
-show i_arulla smirk at left
-mc "{i}Jalan menuju keadilan memang gelap, tapi tidak mustahil.{/i}"
-scene bg ending 8 with fade
-pause
-return
-
-label choicesm_b:
-mc "{i}Kami tahu apa yang mungkin terjadi kalau kami datang ke jamuan itu.{/i}"
-mc "{i}Tekanan. Ancaman. Mungkin juga kehilangan—antara nyawa atau karier.{/i}"
-mc "{i}Jadi kami memilih tidak datang.{/i}"
-show i_mc serius
-show i_zaki emosi at right
-show i_arulla datar at left
-mc "{i}Tapi yang tidak kami duga adalah…{/i}"
-scene bg tolak with fade
-mc "{i}Bahkan tanpa hadir pun, tekanan itu datang.{/i}"
-scene bg kantor with fade
-show i_mc serius
-show i_zaki emosi at right
-show i_arulla datar at left
-z "Ini artikel keempat yang ditolak minggu ini. Padahal buktinya sudah lengkap!"
-a "Kayaknya… mereka mulai menekan dari atas."
-mc "Entah bagaimana, semua artikel investigasi kami tentang kasus korupsi... ditolak mentah-mentah."
-scene bg kantor gelap with fade
-mc "{i}Pergerakan kami dibatasi.{/i}"
-mc "{i}Entah siapa yang menarik tali di atas sana, tapi jelas kami sedang dikekang secara perlahan.{/i}"
-mc "{i}Karena semua pintu resmi tertutup, kami mencari jalan lain.{/i}"
-mc "{i}Kami menghubungi pihak ketiga.{/i}"
-scene bg dark with fade
-mc "{i}Ada yang menyarankan whistleblower. Ada yang membisikkan nama web misterius.{/i}"
-mc "{i}Pilihan mana pun yang kami ambil, tujuannya sama—membuat suara kami tetap terdengar.{/i}"
-mc "{i}Namun tekanan yang kami dapat semakin kuat.{/i}"
-mc "{i}Telepon gelap. Surat ancaman.{/i}"
-mc "{i}Proses penyelidikan kami… lambat. Nyaris stagnan.{/i}"
-mc "{i}Sementara itu, para tikus di luar sana membangun pondasi kekuasaan yang kokoh, dan tak bisa disentuh.{/i}"
-scene bg govt with fade
-"{i}'Pemerintah Baru Dilantik'{/i}"
-mc "{i}Tak sampai setahun setelah kepala babi itu tiba di depan kantor kami, pemerintah baru terbentuk.{/i}"
-mc "{i}Mereka berasal dari lingkaran yang sama.{/i}"
-mc "{i}Dan kini mereka mulai membuat kebijakan yang tak masuk akal—termasuk membatasi kebebasan pers.{/i}"
-scene bg kantor gelap with fade
-mc "{i}Departemen kami dibubarkan.{/i}"
-mc "{i}Zaki menghilang. Arulla berhenti total dari dunia jurnalisme.{/i}"
-scene bg papan gelap with fade
-mc "{i}Dan aku...{/i}"
-mc "{i}Aku tetap menulis, meski dari tempat yang tidak lagi dianggap sebagai kantor.{/i}"
-mc "{i}Bekerja dari bawah tanah.{/i}"
-mc "{i}Entah sampai kapan.{/i}"
-scene bg ending 9 with fade
-pause
-return
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
