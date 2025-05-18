@@ -86,19 +86,16 @@ image zaki mikir:
     zoom 1
 image arulla smirk:
     "Arulla smirk.png"
-    zoom 1
+    zoom 1.1
 image arulla senyum:
     "Arulla senyum.png"
     zoom 0.8
 image arulla kaget:
-    "Arulla kaget.png"
-    zoom 1
-image arulla marah:
     "Arulla marah.png"
-    zoom 1
+    zoom 1.1
 image arulla nangis:
     "Arulla nangis.png"
-    zoom 1
+    zoom 1.1
 image arulla datar:
     "arulla baru.png"
     zoom 3.55
@@ -285,6 +282,7 @@ image bg govt:
 
 label start:
     scene bg papan gelap with dissolve
+    play music "audio/Misterius.mp3" fadein 1.0 volume 0.5
 
     $povname = renpy.input("Enter your name to start the investigation", length=32)
     $povname = povname.strip()
@@ -326,7 +324,9 @@ label choices1_a:
     mc "{i}Kalau aku bertindak sendirian, bisa-bisa aku menjadi bulan-bulanan para…… itu bisa hilang tanpa jejak.{/i}"
     mc "{i}Tidak semua orang di sistem ini busuk, mungkin…mungkin saja masih ada satu-dua orang yang mau menegakkan hukum.{/i}"
     mc "{i}Dan aku tahu harus mulai dari mana.{/i}"
+    stop music fadeout 1.0
     scene bg jaksa with fade
+    play music "audio/Damai.mp3" fadein 1.0 volume 0.5
     show i_mc serius at right with easeinright
     "[povname] berdiri gugup di ruang tunggu. Ia memegang amplop coklat berisi berkas. Tatapannya menyapu para jaksa dan pengacara muda yang berlalu-lalang. Beberapa menatapnya aneh, sisanya terlalu sibuk."
     mc "{i}Aku pernah dengar tentang satu jaksa muda. Idealismenya masih hidup. Katanya, dia menolak sogokan dari kontraktor besar dan hampir dipindah paksa.{/i}"
@@ -633,7 +633,7 @@ show i_arulla datar at left
 z "Proyek revitalisasi? Tapi ini bukan dana dari DPKAD…"
 mc "Berarti ada kemungkinan sumber dana dari luar anggaran resmi?"
 pg "Itu kalian yang harus buktikan. Tapi saya sarankan, coba cek bagian pengadaan dan kepegawaian. Kadang mereka yang tahu lebih dulu."
-scene bg walkot with fade
+scene bg kapol with fade
 show i_walkot at left
 show i_mc serius
 show i_zaki serius at right
