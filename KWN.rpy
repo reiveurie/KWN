@@ -1,4 +1,3 @@
-
 image i_mc senang = At('mc senang', sprite_highlight('mc'))
 image i_mc serius = At('mc serius', sprite_highlight('mc'))
 image i_mc takut = At('mc takut', sprite_highlight('mc'))
@@ -99,7 +98,7 @@ image arulla nangis:
     zoom 1.1
 image arulla datar:
     "arulla baru.png"
-    zoom 3.55
+    zoom 1.1
 image mc takut:
     "MC_takut aja.png"
     zoom 0.5
@@ -236,8 +235,8 @@ image bg korban:
     "korban.png"
     zoom 1
 image bg rumah luar:
-    "rumah luar.png"
-    zoom 3.5
+    "rumah luar.jpg"
+    zoom 1
 image bg rek:
     "rek.png"
     zoom 1
@@ -328,7 +327,7 @@ label choices1_a:
     stop music fadeout 1.0
     scene bg jaksa with fade
     play music "audio/Damai.mp3" fadein 1.0 volume 0.5
-    show i_mc serius at right with easeinright
+    show i_mc serius at right
     "[povname] berdiri gugup di ruang tunggu. Ia memegang amplop coklat berisi berkas. Tatapannya menyapu para jaksa dan pengacara muda yang berlalu-lalang. Beberapa menatapnya aneh, sisanya terlalu sibuk."
     mc "{i}Aku pernah dengar tentang satu jaksa muda. Idealismenya masih hidup. Katanya, dia menolak sogokan dari kontraktor besar dan hampir dipindah paksa.{/i}"
     mc "{i}Aku tak punya pilihan selain mencoba menemuinya.{/i}"
@@ -351,7 +350,10 @@ label choices1_b:
     play music "audio/Tegang.mp3" fadein 1.0 volume 0.5
     mc "{i}Sebelum memulai semua ini, setelah berhari-hari riset, aku menemukan mereka. Komunitas warga yang tidak hanya protes, tapi juga membawa bukti. Mereka pernah melaporkan sang walikota—meski selalu ditutup dengan alasan klasik: tidak terbukti.{/i}"
     mc "{i}Aku memutuskan untuk menghubungi mereka.{/i}"
+    play sound "audio/Ting.mp3" volume 0.5
     show forum1 at top with moveinbottom
+    pause
+    play sound "audio/Ting.mp3" volume 0.5
     show forum2 at truecenter with moveinbottom
     "Mereka tidak hanya berani. Mereka siap."
     mc "{i}Bukti yang kukumpulkan dari mereka akan jadi bagian penting—bukan hanya untuk berita, tapi untuk membongkar sistem yang selama ini melindungi sang walikota.{/i}"
@@ -360,6 +362,7 @@ label choices1_b:
 
 label choices1_common:
     scene bg papan with fade
+    play music "audio/Misterius.mp3" fadein 1.0 volume 0.5
     show i_mc serius
     mc "{i}Kutatap naskah final berita di laptopku.{/i}"
     mc "{i}Berita ini akan mengguncang kota. Akan menggoyahkan nama besar.{/i}"
@@ -398,17 +401,6 @@ label choices1_common:
     pause
     hide tikus
     "{i}Isinya... lima bangkai tikus. Tanpa kepala.{/i}"
-    label choices_ancaman:
-        "Ancaman pertama."
-    menu:
-        "Rilis balasan teror":
-            jump choices3_a
-        "Diamkan ":
-            jump choices3_b
-    stop music fadeout 1.0
-    label choices3_a:
-    scene bg kamar with fade
-    play music "audio/Damai.mp3" fadein 1.0 volume 0.5
     show i_mc serius
     mc "{i}Tentu saja mereka mencoba menakutiku. Tapi ini hanya memperkuat keyakinanku: aku sedang menyentuh sarang yang selama ini dibiarkan utuh.{/i}"
     mc "{i}Mereka berpikir ancaman menjijikkan bisa memadamkan apa yang sudah kubakar.{/i}"
@@ -481,7 +473,7 @@ label choices1_common:
     show i_mc serius
     mc "Aku nggak bisa balik ke sana. Nggak sekarang..."
     scene bg cerita with fade
-    "{i}Lalu ia membuka dokumen baru. Judulnya: "Kisah Kopi Pagi dan Tukang Roti di Ujung Jalan".{/i}"
+    "{i}Lalu ia membuka dokumen baru. Judulnya: Kisah Kopi Pagi dan Tukang Roti di Ujung Jalan.{/i}"
     "{i}Terdengar konyol. Tapi kali ini, tidak ada ancaman. Tidak ada teror. Hanya cerita. Dan sunyi.{/i}"
     mc "Aku masih bisa menulis. Cuma... bukan lagi untuk menyulut, tapi untuk menyembuhkan."
     "{i}Ia menekan save. Di pojok bawah tidak lagi tertulis namanya, yang tertulis hanya lah sebuah identitas kosong 'Anonim'.{/i}"
@@ -596,14 +588,12 @@ label choices1_common:
     jump choices_tolak
         
     label choices2b_b:
-    play music "audio/.mp3" fadein 1.0 volume 0.5
+    play music "audio/Tegang.mp3" fadein 1.0 volume 0.5
     scene bg kamar with fade
     show i_mc serius
     mc "{i}Aku bangun pagi ini dengan perasaan yang cukup aneh.{/i}"
     mc "{i}Biasanya aku menyambut pagi dengan semangat, menyalakan TV sambil menyeduh kopi.{/i}"
     mc "{i}Tapi hari ini… aku takut. Bukan takut pada berita. Tapi pada siapa yang mungkin jadi berita berikutnya.{/i}"
-    stop music fadeout 1.0
-    play music "audio/Tegang.mp3" fadein 1.0 volume 0.5
     scene bg news with fade
     "{i}Seorang pemilik sekaligus pengelola panti asuhan Kasih Kita mengalami penyerangan malam tadi. Korban meninggal dunia karena pendarahan akut dan pisau yang dibalur dengan racun.{/i}"
     mc "{i}Tanganku gemetar memegang remote. Itu bukan korban biasa. Itu seseorang yang... pernah membantuku.{/i}"
@@ -726,7 +716,7 @@ mc "{i} Pagi itu, kami menemukan sebuah kotak misterius di depan pintu kantor. T
 z "Siapa yang ngirim ini?! Siapa yang berani main-main begini?!"
 a "Jangan dibuka dulu… baunya... itu bukan bau biasa..."
 stop music fadeout 1.0
-play music "audio/Adrenali.mp3" fadein 1.0 volume 0.5
+play music "audio/Adrenalin.mp3" fadein 1.0 volume 0.5
 "{i} Hanya satu benda di dalamnya.{/i}"
 show babi at truecenter
 pause
@@ -786,7 +776,7 @@ a "Semoga ini cukup buat bikin mereka takut."
 scene bg hari with fade
 scene bg black
 mc "{i}Artikel kami meledak. Bukan hanya masyarakat yang marah, tapi juga para jurnalis dari redaksi lain. Ternyata, kami bukan satu-satunya yang pernah diteror. Satu per satu mereka bergabung.{/i}"
-stop music fideout 1.0
+stop music fadeout 1.0
 scene bg sn
 play music "audio/Tegang.mp3" fadein 1.0 volume 0.5
 s "Kejadian ini adalah bentuk ancaman terhadap demokrasi. Ketika kebebasan pers mulai dibungkam, itu berarti Pancasila bangsa telah dilukai."
@@ -934,7 +924,7 @@ mc "{i}Hanya telinga kami yang kami bawa—siap menangkap setiap celah yang mere
 mc "{i}Mereka mengira kami akan terlena oleh jamuan menjijikkan ini.{/i}"
 mc "{i}Padahal, kami justru mencatat.{/i}"
 mc "{i}Nama-nama. Lokasi. Angka-angka. Semua tersimpan rapi di kepala kami.{/i}"
-stop music fideout 1.0
+stop music fadeout 1.0
 scene bg kantor with fade
 play music "audio/Damai.mp3" fadein 1.0 volume 0.5
 show i_mc serius
@@ -969,7 +959,7 @@ mc "{i}Kami tahu apa yang mungkin terjadi kalau kami datang ke jamuan itu.{/i}"
 mc "{i}Tekanan. Ancaman. Mungkin juga kehilangan—antara nyawa atau karier.{/i}"
 mc "{i}Jadi kami memilih tidak datang.{/i}"
 stop music fadeout 1.0
-play music "audio/Adrenali.mp3" fadein 1.0 volume 0.5
+play music "audio/Adrenalin.mp3" fadein 1.0 volume 0.5
 show i_mc serius
 show i_zaki emosi at right
 show i_arulla datar at left
@@ -1014,4 +1004,3 @@ stop music fadeout 1.0
 scene bg ending 9 with fade
 pause
 return
-
