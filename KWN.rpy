@@ -164,7 +164,7 @@ image bg laut:
     zoom 0.7
 image bg rumah laut:
     "POV rumah NTT.png"
-    zoom 0.7
+    zoom 1.25
 image bg ending 1:
     "ending 1.png"
     zoom 1
@@ -299,7 +299,7 @@ label start:
 label choices_awal:
     mc "{i}Aku harus mulai dari satu tempat. Entah bekerja sama dengan penegak hukum... atau mencari suara warga.{/i}"
 menu:
-    "Bekerja secara individu.":
+    "Bekerja secara individu":
         jump choices0_a
     "Bekerja dalam tim":
         jump choices0_b
@@ -427,7 +427,7 @@ label choices1_common:
     show i_mc nangis at right
     show i_penculik at left
     "{i}[povname] menatap tajam sang penculik. Menunggunya mengeluarkan kata kata.{/i}"
-    pc "“Kamu benar-benar nekad, ya? Menulis pakai nama asli, seakan nggak sadar sedang melawan apa."
+    pc "Kamu benar-benar nekad, ya? Menulis pakai nama asli, seakan nggak sadar sedang melawan apa."
     mc "Kalau kamu cukup takut untuk culik aku, berarti tulisan itu benar, kan?"
     pc "Kamu pikir kamu pahlawan? Dunia ini nggak sesimpel idealismemu. Yang kamu ganggu bukan cuma satu walikota."
     mc "Jadi kamu baru ngaku. Bukan cuma dia, kan? Siapa lagi yang kamu lindungi?"
@@ -515,6 +515,7 @@ label choices1_common:
     label choices4_common:
     scene bg ending 1 with fade
     pause
+    jump creds
     return
 
     label choices2_b:
@@ -582,6 +583,7 @@ label choices1_common:
     scene bg ending 2 with fade
     stop music fadeout 1.0
     pause
+    jump creds
     return
             
     label choices2ba_b:
@@ -617,6 +619,7 @@ label choices1_common:
     scene bg ending 3 with fade
     pause
     stop music fadeout 1.0
+    jump creds
     return
 
 label choices0_b:
@@ -762,6 +765,7 @@ show i_mc serius
 mc "{i}Tapi jauh di dalam hati… aku tahu, kejahatan sang walikota mungkin tidak akan pernah terungkap.{/i}"
 scene bg ending 5 with fade 
 pause
+jump creds
 return
 
 label choicest_b:
@@ -877,6 +881,7 @@ mc "{i}Kami dikriminalisasi... dan akhirnya dijebloskan ke penjara.{/i}"
 stop music fadeout 0.5
 scene bg ending 6 with fade
 pause
+jump creds
 return
 
 label choicese_b:
@@ -910,6 +915,7 @@ mc "{i}Berapapun mereka membayar polisi, bukti sekuat ini tak akan bisa membebas
 stop music fadeout 1.0
 scene bg ending 7 with fade
 pause
+jump creds
 return
 
 label choicesr_b:
@@ -951,6 +957,7 @@ mc "{i}Jalan menuju keadilan memang gelap, tapi tidak mustahil.{/i}"
 scene bg ending 8 with fade
 stop music fadeout 1.0
 pause
+jump creds
 return
 
 label choicesm_b:
@@ -1003,4 +1010,58 @@ mc "{i}Entah sampai kapan.{/i}"
 stop music fadeout 1.0
 scene bg ending 9 with fade
 pause
+jump creds
+return
+
+label creds:
+scene black
+with fade
+
+show text "{i}Game Designer{/i}\n Sheryl Shakiya Ramadhani\n Najma Maisya Muchsin" at truecenter with dissolve 
+pause 2.5
+hide text with dissolve
+
+show text "{i}Script Writer{/i}\n Naura Andita Syafitri\n Hanan abdullah" at truecenter with dissolve
+pause 2.5 
+hide text with dissolve
+
+show text "{i}Programmer{/i}\n Reina Amelia Faiza\n Khansa Aprilia\n Fatihatul Ilmi Daulay" at truecenter with dissolve 
+pause 2.5
+hide text with dissolve
+
+show text "{i}Graphic Designer / Illustrator{/i}\n Early Auraliana Jainata\n Khalisha Ramadhani Dahniar\n Arsylla Riskadewi" at truecenter with dissolve
+pause 2.5
+hide text with dissolve
+
+show text "{i}UI / UX Designer{/i}\n Sheryl Shakiya Ramadhani" at truecenter with dissolve
+pause 2.
+hide text with dissolve
+
+show text "{i}Sound Designer / Composer{/i}\n Rahma Aisha Diandra" at truecenter with dissolve 
+pause 2.5
+hide text with dissolve
+
+show text "{i}Quality Assurance (QA) Tester{/i}\n Adelia Rafeyla Khalisa\n Wanda Khairina Afifuddin" at truecenter with dissolve
+pause 2.5
+hide text with dissolve
+
+show text "{i}Publication Specialist{/i}\n Dini Nurul Aini Darmawan" at truecenter with dissolve
+pause 2.5 
+hide text with dissolve
+
+show text "Terima kasih telah memainkan Visual Novel Ini" at truecenter with dissolve 
+pause 2.5
+hide text with dissolve
+
+show text "Karya ini adalah bagian dari tugas\n Mata Kuliah WI2006 Kewarganegaraan"  at truecenter with dissolve 
+pause 2.5
+hide text with dissolve
+
+show text "dan bentuk kontribusi kecil kami untuk negeri." at truecenter with dissolve 
+pause 2.5
+hide text with dissolve
+
+show text "Salam hangat dari seluruh tim." at truecenter with dissolve 
+pause 3
+
 return
